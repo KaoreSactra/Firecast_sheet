@@ -6,10 +6,10 @@
     <version>0.1</version>
     <info lang="pt-BR">
         <!--Informações do plugin na língua "pt-BR". Você pode ter várias tags "info", uma para cada tradução que quiser.-->
-        <name>ORP 01</name>
+        <name>Ordem Paranormal</name>
         <description>Ficha de personagem paranormal feita por fã: Explore o sobrenatural com esta ficha de RPG criada por um entusiasta, cuidadosamente elaborada para uma experiência de jogo fora do comum.</description>
         <author>Gus / Kaore</author>
-        <site></site>
-        <contact></contact>
+        <site>https://github.com/KaoreSactra</site>
+        <contact>https://www.instagram.com/gusta_sactra/</contact>
     </info>
 </module>

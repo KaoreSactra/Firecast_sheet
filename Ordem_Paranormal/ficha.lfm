@@ -1,4 +1,304 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form name="frmficha" formType="sheetTemplate" dataType="Ficha.ORP.Gus" title="Ordem Paranormal" align="client" theme="dark">
 
+    <style>
+        .background{
+            align: client;
+            color: #272727;
+        }
+        .pattern{
+            align: client;
+            autoHeight: true;
+            horzAlign: center;
+            margins: {top=15};
+        }
+        .sheet{
+            height: 800;
+            width: 400;
+            color: #121212;
+            cornerType: round;
+            xradius: 10;
+            yradius: 10;
+        }
+        .tab_button{
+            align: top;
+            margins: {top=15};
+            horzAlign: center;
+            autoHeight: true;
+            orientation: horizontal;
+            compilerOrder: 1;
+        }
+        .tab_button flowPart{
+			height: 30;
+			width: 40;
+        }
+        .tab_button button{
+			align: client;
+			fontSize: 18;
+		}
+        .lay{
+            align: client;
+            color: #121212;
+            margins: {top=15, bottom=15, left=15, right=15};
+            compilerOrder: 2;
+        }
+        .lay layout{
+            align: client;
+        }
+        #layFrente flowLayout{
+            align: top;
+            horzAlign: center;
+            autoHeight: true;
+            orientation: Vertical;
+            maxColumns: 1;
+        }
+        .dice_camp{
+            align: bottom;
+            margins: {bottom=15};
+            horzAlign: center;
+            autoHeight: true;
+            orientation: horizontal;
+        }
+        .dice_camp rectangle{
+			color: #ffe000;
+			height: 30;
+			width: 30;
+			xradius: 15;
+			yradius: 15;
+			cornerType: round;
+        }
+        .dice_camp button{
+			align: client;
+			opacity: 0;
+		}
+        .dice_camp label{
+			fontSize: 18;
+			fontColor: #121212;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			fontStyle: bold;
+			align: client;
+			fontFamily: georgia;
+		}
+    </style>
+
+    <rectangle class="background">
+        <flowLayout class="pattern">
+            <rectangle class="sheet">
+                <flowLayout class="tab_button">
+                    <flowPart><button text="😀" hint="Perfil" onClick="TrocarAba('F');"/></flowPart>
+					<flowPart margins="{left=15}"><button text="🔨" hint="Perícias" onClick="TrocarAba('P');"/></flowPart>
+					<flowPart margins="{left=15}"><button text="⚔️" hint="Ataques" onClick="TrocarAba('A');"/></flowPart>
+					<flowPart margins="{left=15}"><button text="☄" hint="Rituais" onClick="TrocarAba('R');"/></flowPart>
+					<flowPart margins="{left=15}"><button text="📚" hint="Habilidades" onClick="TrocarAba('H');"/></flowPart>
+					<flowPart margins="{left=15}"><button text="🎒" hint="Inventário" onClick="TrocarAba('I');"/></flowPart>
+					<flowPart margins="{left=15}"><button text="📖" hint="Notas" onClick="TrocarAba('N');"/></flowPart>
+				</flowLayout>
+
+                <script>
+					<![CDATA[
+						local function TrocarAba(a)
+							if(a == 'F') then
+								self.layFrente.visible = true;
+								self.layPericias.visible = false;
+								self.layAtaques.visible = false;
+								self.layRituais.visible = false;
+								self.layHabil.visible = false;
+								self.layInvent.visible = false;
+								self.layAnota.visible = false;
+							elseif(a == 'P') then
+								self.layFrente.visible = false;
+								self.layPericias.visible = true;
+								self.layAtaques.visible = false;
+								self.layRituais.visible = false;
+								self.layHabil.visible = false;
+								self.layInvent.visible = false;
+								self.layAnota.visible = false;
+							elseif(a == 'A') then
+								self.layFrente.visible = false;
+								self.layPericias.visible = false;
+								self.layAtaques.visible = true;
+								self.layRituais.visible = false;
+								self.layHabil.visible = false;
+								self.layInvent.visible = false;
+								self.layAnota.visible = false;
+							elseif(a == 'R') then
+								self.layFrente.visible = false;
+								self.layPericias.visible = false;
+								self.layAtaques.visible = false;
+								self.layRituais.visible = true;
+								self.layHabil.visible = false;
+								self.layInvent.visible = false;
+								self.layAnota.visible = false;
+							elseif(a == 'H') then
+								self.layFrente.visible = false;
+								self.layPericias.visible = false;
+								self.layAtaques.visible = false;
+								self.layRituais.visible = false;
+								self.layHabil.visible = true;
+								self.layInvent.visible = false;
+								self.layAnota.visible = false;
+							elseif(a == 'I') then
+								self.layFrente.visible = false;
+								self.layPericias.visible = false;
+								self.layAtaques.visible = false;
+								self.layRituais.visible = false;
+								self.layHabil.visible = false;
+								self.layInvent.visible = true;
+								self.layAnota.visible = false;
+							elseif(a == 'N') then
+								self.layFrente.visible = false;
+								self.layPericias.visible = false;
+								self.layAtaques.visible = false;
+								self.layRituais.visible = false;
+								self.layHabil.visible = false;
+								self.layInvent.visible = false;
+								self.layAnota.visible = true;
+							end;
+						end;
+					]]>
+				</script>
+
+                <rectangle class="lay">
+                    <layout name="layFrente">
+                        <flowLayout>
+                            <flowPart>
+                                <rectangle width="10" height="10" margins="{top=5}"/>
+                            </flowPart>
+
+                            <flowPart>
+                                <rectangle width="10" height="10" margins="{top=5}"/>
+                            </flowPart>
+                            
+                            <flowPart>
+                                <rectangle width="10" height="10" margins="{top=5}"/>
+                            </flowPart>
+                            
+                            <flowPart>
+                                <rectangle width="10" height="10" margins="{top=5}"/>
+                            </flowPart>
+                        </flowLayout>
+                    </layout>
+
+                    <layout name="layPericias">
+                    </layout>
+
+                    <layout name="layAtaques">
+                    </layout>
+
+                    <layout name="layRituais">
+                    </layout>
+
+                    <layout name="layHabil">
+                    </layout>
+
+                    <layout name="layInvent">
+                    </layout>
+
+                    <layout name="layAnota">
+                    </layout>
+                </rectangle>
+
+                <flowLayout class="dice_camp">
+
+                    <rectangle>
+                        <label text="A"/>
+                        <button hint="Agilidade">
+                            <event name="onClick">
+                                
+                                local rolagem = Firecast.interpretarRolagem(sheet.AGI .. ("d20")); 
+                                
+                                if sheet.AGI == 0 then
+                                
+                                    rolagem = Firecast.interpretarRolagem("2d20");
+                                    
+                                end;
+                                
+                                local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                mesaDoPersonagem.chat:rolarDados(rolagem, "Agilidade");
+                            </event>
+                        </button>
+                    </rectangle>
+                    
+                    <rectangle margins="{left=15}">
+                        <label text="F"/>
+                        <button hint="Força">
+                            <event name="onClick">
+                            
+                                local rolagem = Firecast.interpretarRolagem(sheet.FOR .. ("d20")); 
+                                
+                                if sheet.FOR == 0 then
+                                
+                                    rolagem = Firecast.interpretarRolagem("2d20");
+                                    
+                                end;
+                                
+                                local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                mesaDoPersonagem.chat:rolarDados(rolagem, "Força");
+                            </event>
+                        </button>
+                    </rectangle>
+
+                    <rectangle margins="{left=15}">
+                        <label text="I"/>
+                        <button hint="Intelecto">
+                            <event name="onClick">
+                            
+                                local rolagem = Firecast.interpretarRolagem(sheet.INT .. ("d20")); 
+                                
+                                if sheet.INT == 0 then
+                                
+                                    rolagem = Firecast.interpretarRolagem("2d20");
+                                    
+                                end;
+                                
+                                local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                mesaDoPersonagem.chat:rolarDados(rolagem, "Intelecto");
+                            </event>
+                        </button>
+                    </rectangle>
+
+                    <rectangle margins="{left=15}">
+                        <label text="P"/>
+                        <button hint="Presença">
+                            <event name="onClick">
+                            
+                                local rolagem = Firecast.interpretarRolagem(sheet.PRE .. ("d20")); 
+                                
+                                if sheet.PRE == 0 then
+                                
+                                    rolagem = Firecast.interpretarRolagem("2d20");
+                                    
+                                end;
+                                
+                                local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                mesaDoPersonagem.chat:rolarDados(rolagem, "Presença");
+                            </event>
+                        </button>
+                    </rectangle>
+
+                    <rectangle margins="{left=15}">
+                        <label text="V"/>
+                        <button hint="Vigor">
+                            <event name="onClick">
+                            
+                                local rolagem = Firecast.interpretarRolagem(sheet.VIG .. ("d20")); 
+                                
+                                if sheet.VIG == 0 then
+                                
+                                    rolagem = Firecast.interpretarRolagem("2d20");
+                                    
+                                end;
+                                
+                                local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                mesaDoPersonagem.chat:rolarDados(rolagem, "Vigor");
+                            </event>
+                        </button>
+                    </rectangle>
+
+				</flowLayout>
+            </rectangle>
+        </flowLayout>
+    </rectangle>
+    
 </form>
