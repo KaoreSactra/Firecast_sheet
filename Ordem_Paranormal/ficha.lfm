@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form name="frmficha" formType="sheetTemplate" dataType="Ficha.ORP.Gus" title="Ordem Paranormal" align="client" theme="dark">
 
+<!-- Style -->
     <style>
         .background{
             align: client;
@@ -10,15 +11,15 @@
             align: client;
             autoHeight: true;
             horzAlign: center;
-            margins: {top=15};
+            margins: {top=35};
         }
         .sheet{
             height: 800;
             width: 400;
             color: #121212;
             cornerType: round;
-            xradius: 10;
-            yradius: 10;
+            xradius: 20;
+            yradius: 20;
         }
         .tab_button{
             align: top;
@@ -30,11 +31,11 @@
         }
         .tab_button flowPart{
 			height: 30;
-			width: 40;
+			width: 38;
         }
         .tab_button button{
 			align: client;
-			fontSize: 18;
+			fontSize: 16;
 		}
         .lay{
             align: client;
@@ -50,6 +51,7 @@
             horzAlign: center;
             autoHeight: true;
             orientation: Vertical;
+            width: 400;
             maxColumns: 1;
         }
         .dice_camp{
@@ -80,21 +82,142 @@
 			align: client;
 			fontFamily: georgia;
 		}
+        .profile_photo{
+            height: 260;
+            width: 260;
+            color: transparent;
+            margins: {top=15};
+            compilerOrder: 0;
+        }
+        .img_show{
+            align: client;
+            field: foto;
+            style: autoFit;
+            compilerOrder: 0;
+        }
+        .img_hide{
+            align: client;
+            field: foto;
+            style: autoFit;
+            editable: true;
+            opacity: 0;
+            compilerOrder: 3;
+        }
+        .frame1{
+            align: client;
+            margins: {top=-15, bottom=-15, left=-15, right=-15};
+            color: transparent;
+            strokeColor: #121212;
+            strokeSize: 15;
+            xradius: 40;
+            yradius: 40;
+            cornerType: round;
+            compilerOrder: 1;
+        }
+        .frame2{
+            align: client;
+            color: transparent;
+            strokeColor: #ffe000;
+            strokeSize: 4;
+            xradius: 30;
+            yradius: 30;
+            cornerType: round;
+            compilerOrder: 2;
+        }
+        .nex{
+            align: client;
+            margins: {top=-10, bottom=230, left=230, right=-10};
+            color: #ffe000;
+            xradius: 10;
+            yradius: 10;
+            cornerType: round;
+            compilerOrder: 4;
+        }
+        .nex edit{
+            align: client;
+            field: nex;
+            hint: nex;
+            fontSize: 15;
+			fontColor: #121212;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			margins: {right=15};
+			fontStyle: bold;
+			transparent: true;
+			type: number;
+			min: 0;
+			max: 99;
+        }
+        .nex label{
+            align: client;
+			fontSize: 15;
+			fontColor: #121212;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			margins: {left=18};
+			fontStyle: bold;
+        }
+        .rec_info{
+            height: 25;
+            width: 320;
+            color: #343434;
+            margins: {top=10};
+            compilerOrder: 1;
+        }
+        .subline{
+            align: bottom;
+            height: 1;
+            color: #ffe000;
+            compilerOrder: 100;
+        }
+        .camp_name{
+            align: client;
+            transparent: true;
+            field: nome;
+            hint: Nome;
+            fontSize: 18;
+			fontColor: #ffe000;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			fontStyle: bold;
+        }
+        #layAnota rectangle{
+            align: client;
+            color: transparent;
+        }
+        #layAnota rectangle rectangle{
+            align: client;
+            color: #494949;
+            xradius: 4;
+            yradius: 4;
+            cornerType: round;
+        }
+        #layAnota rectangle richEdit{
+            align: client;
+            backgroundColor: transparent;
+            defaultFontColor: white;
+            field: txt;
+        }
     </style>
 
+<!-- Corpo -->
     <rectangle class="background">
         <flowLayout class="pattern">
+        <!-- Ficha -->
             <rectangle class="sheet">
+            <!-- Tabela de botões -->
                 <flowLayout class="tab_button">
                     <flowPart><button text="😀" hint="Perfil" onClick="TrocarAba('F');"/></flowPart>
-					<flowPart margins="{left=15}"><button text="🔨" hint="Perícias" onClick="TrocarAba('P');"/></flowPart>
-					<flowPart margins="{left=15}"><button text="⚔️" hint="Ataques" onClick="TrocarAba('A');"/></flowPart>
-					<flowPart margins="{left=15}"><button text="☄" hint="Rituais" onClick="TrocarAba('R');"/></flowPart>
-					<flowPart margins="{left=15}"><button text="📚" hint="Habilidades" onClick="TrocarAba('H');"/></flowPart>
-					<flowPart margins="{left=15}"><button text="🎒" hint="Inventário" onClick="TrocarAba('I');"/></flowPart>
-					<flowPart margins="{left=15}"><button text="📖" hint="Notas" onClick="TrocarAba('N');"/></flowPart>
+					<flowPart margins="{left=10}"><button text="🔨" hint="Perícias" onClick="TrocarAba('P');"/></flowPart>
+					<flowPart margins="{left=10}"><button text="⚔️" hint="Ataques" onClick="TrocarAba('A');"/></flowPart>
+					<flowPart margins="{left=10}"><button text="☄" hint="Rituais" onClick="TrocarAba('R');"/></flowPart>
+					<flowPart margins="{left=10}"><button text="📚" hint="Habilidades" onClick="TrocarAba('H');"/></flowPart>
+					<flowPart margins="{left=10}"><button text="🎒" hint="Inventário" onClick="TrocarAba('I');"/></flowPart>
+					<flowPart margins="{left=10}"><button text="📋" hint="Notas" onClick="TrocarAba('N');"/></flowPart>
+					<flowPart margins="{left=10}"><button text="📖" hint="Livro" onClick="TrocarAba('L');"/></flowPart>
 				</flowLayout>
 
+            <!-- Script -->
                 <script>
 					<![CDATA[
 						local function TrocarAba(a)
@@ -106,6 +229,7 @@
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
 								self.layAnota.visible = false;
+								self.layBook.visible = false;
 							elseif(a == 'P') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = true;
@@ -114,6 +238,7 @@
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
 								self.layAnota.visible = false;
+								self.layBook.visible = false;
 							elseif(a == 'A') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
@@ -122,6 +247,7 @@
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
 								self.layAnota.visible = false;
+								self.layBook.visible = false;
 							elseif(a == 'R') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
@@ -130,6 +256,7 @@
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
 								self.layAnota.visible = false;
+								self.layBook.visible = false;
 							elseif(a == 'H') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
@@ -138,6 +265,7 @@
 								self.layHabil.visible = true;
 								self.layInvent.visible = false;
 								self.layAnota.visible = false;
+								self.layBook.visible = false;
 							elseif(a == 'I') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
@@ -146,6 +274,7 @@
 								self.layHabil.visible = false;
 								self.layInvent.visible = true;
 								self.layAnota.visible = false;
+								self.layBook.visible = false;
 							elseif(a == 'N') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
@@ -154,51 +283,83 @@
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
 								self.layAnota.visible = true;
+								self.layBook.visible = false;
+							elseif(a == 'L') then
+								self.layFrente.visible = false;
+								self.layPericias.visible = false;
+								self.layAtaques.visible = false;
+								self.layRituais.visible = false;
+								self.layHabil.visible = false;
+								self.layInvent.visible = false;
+								self.layAnota.visible = false;
+								self.layBook.visible = true;
 							end;
 						end;
 					]]>
 				</script>
 
+            <!-- Layers -->
                 <rectangle class="lay">
+                <!-- Perfil -->
                     <layout name="layFrente">
                         <flowLayout>
-                            <flowPart>
-                                <rectangle width="10" height="10" margins="{top=5}"/>
-                            </flowPart>
-
-                            <flowPart>
-                                <rectangle width="10" height="10" margins="{top=5}"/>
-                            </flowPart>
-                            
-                            <flowPart>
-                                <rectangle width="10" height="10" margins="{top=5}"/>
-                            </flowPart>
-                            
-                            <flowPart>
-                                <rectangle width="10" height="10" margins="{top=5}"/>
-                            </flowPart>
+                        <!-- Imagem -->
+                            <rectangle class="profile_photo">
+								<image class="img_show"/>
+								<rectangle class="frame1"/>
+								<rectangle class="frame2"/>
+								<image class="img_hide"/>
+                                <rectangle class="nex">
+									<edit/>
+									<label text="%"/>
+								</rectangle>
+							</rectangle>
+                        <!-- Infos -->
+                            <rectangle class="rec_info">
+                                <edit class="camp_name"/>
+                                <rectangle class="subline"/>
+                            </rectangle>
+                            <rectangle class="rec_info">
+                                <rectangle class="subline"/>
+                            </rectangle>
+                            <rectangle class="rec_info">
+                                <rectangle class="subline"/>
+                            </rectangle>
+                            <rectangle class="rec_info">
+                                <rectangle class="subline"/>
+                            </rectangle>
                         </flowLayout>
                     </layout>
-
+                <!-- Pericias -->
                     <layout name="layPericias">
                     </layout>
-
+                <!-- Ataques -->
                     <layout name="layAtaques">
                     </layout>
-
+                <!-- Rituais -->
                     <layout name="layRituais">
                     </layout>
-
+                <!-- Habilidades -->
                     <layout name="layHabil">
                     </layout>
-
+                <!-- Inventário -->
                     <layout name="layInvent">
                     </layout>
-
+                <!-- Anotação -->
                     <layout name="layAnota">
+					<!-- Fundo -->
+						<rectangle>
+						<!-- Campo de texto -->
+							<rectangle/>
+							<richEdit/>
+						</rectangle>
+                    </layout>
+                <!-- Livro -->
+                    <layout name="layBook">
                     </layout>
                 </rectangle>
 
+            <!-- Campo de dados -->
                 <flowLayout class="dice_camp">
 
                     <rectangle>
@@ -301,4 +462,5 @@
         </flowLayout>
     </rectangle>
     
+
 </form>
