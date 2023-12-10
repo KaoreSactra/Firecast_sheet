@@ -37,23 +37,6 @@
 			align: client;
 			fontSize: 16;
 		}
-        .lay{
-            align: client;
-            color: #121212;
-            margins: {top=15, bottom=15, left=15, right=15};
-            compilerOrder: 2;
-        }
-        .lay layout{
-            align: client;
-        }
-        #layFrente flowLayout{
-            align: top;
-            horzAlign: center;
-            autoHeight: true;
-            orientation: Vertical;
-            width: 400;
-            maxColumns: 1;
-        }
         .dice_camp{
             align: bottom;
             margins: {bottom=15};
@@ -82,6 +65,26 @@
 			align: client;
 			fontFamily: georgia;
 		}
+        .lay{
+            align: client;
+            color: #121212;
+            margins: {top=15, bottom=15, left=15, right=15};
+            compilerOrder: 2;
+        }
+        .lay layout{
+            align: client;
+        }
+        #layFrente{
+            visible: true;
+        }
+        #layFrente flowLayout{
+            align: top;
+            horzAlign: center;
+            autoHeight: true;
+            orientation: Vertical;
+            width: 400;
+            maxColumns: 1;
+        }
         .profile_photo{
             height: 260;
             width: 260;
@@ -159,8 +162,8 @@
         }
         .rec_info{
             height: 25;
-            width: 320;
-            color: #343434;
+            width: 300;
+            color: transparent;
             margins: {top=10};
             compilerOrder: 1;
         }
@@ -169,6 +172,7 @@
             height: 1;
             color: #ffe000;
             compilerOrder: 100;
+            margins: {left=15, right=15};
         }
         .camp_name{
             align: client;
@@ -181,18 +185,96 @@
 			vertTextAlign: center;
 			fontStyle: bold;
         }
-        #layAnota rectangle{
+        .box_infos{
             align: client;
+			transparent: true;
+			fontColor: #ffe000;
+			fontSize: 18;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			fontStyle: bold;
+        }
+        .rec_info layout{
+            align: client;
+        }
+        .camp_trilha{
+            align: client;
+            text: Sem trilha;
+            fontSize: 18;
+			fontColor: #ffe000;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			fontStyle: bold;
+        }
+        #combatente_trilha, #especialista_trilha, #ocultista_trilha{
+            visible: false;
+        }
+        .attributes_back{
+            height: 250;
+            width: 250;
+            color: transparent;
+            margins: {top=15};
+        }
+        .attributes_img{
+            align: client;
+            src: images/frameAttributes.png;
+            style: autoFit;
+        }
+        .Catr{
+            align: client;
+            text: ATRIBUTOS;
+            fontSize: 12;
+			fontColor: #121212;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			fontStyle: bold;
+            margins: {top=18};
+        }
+        .atr{
+            align: client;
+            fontSize: 12;
+			fontColor: #ffe000;
+			horzTextAlign: center;
+			vertTextAlign: leading;
+			fontStyle: bold;
+        }
+        .Eatr{
+            height: 25;
+            width: 25;
+            transparent: true;
+            fontSize: 22;
+			fontColor: #ffe000;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			fontStyle: bold;
+			type: number;
+			min: 0;
+			max: 9;
+        }
+        #layAnota{
+            visible: false;
+        }
+        #layAnota flowLayout{
+            align: top;
+            horzAlign: center;
+            autoHeight: true;
+            orientation: Vertical;
+            width: 400;
+            maxColumns: 1;
+        }
+        .notes_back{
+            height: 680;
+            width: 370;
             color: transparent;
         }
-        #layAnota rectangle rectangle{
+        rectangle.notes{
             align: client;
             color: #494949;
             xradius: 4;
             yradius: 4;
             cornerType: round;
         }
-        #layAnota rectangle richEdit{
+        richEdit.notes{
             align: client;
             backgroundColor: transparent;
             defaultFontColor: white;
@@ -214,7 +296,7 @@
 					<flowPart margins="{left=10}"><button text="📚" hint="Habilidades" onClick="TrocarAba('H');"/></flowPart>
 					<flowPart margins="{left=10}"><button text="🎒" hint="Inventário" onClick="TrocarAba('I');"/></flowPart>
 					<flowPart margins="{left=10}"><button text="📋" hint="Notas" onClick="TrocarAba('N');"/></flowPart>
-					<flowPart margins="{left=10}"><button text="📖" hint="Livro" onClick="TrocarAba('L');"/></flowPart>
+					<flowPart margins="{left=10}"><button text="📖" hint="Livro" onClick="TrocarAba('B');"/></flowPart>
 				</flowLayout>
 
             <!-- Script -->
@@ -284,7 +366,7 @@
 								self.layInvent.visible = false;
 								self.layAnota.visible = true;
 								self.layBook.visible = false;
-							elseif(a == 'L') then
+							elseif(a == 'B') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
 								self.layAtaques.visible = false;
@@ -315,18 +397,178 @@
 								</rectangle>
 							</rectangle>
                         <!-- Infos -->
-                            <rectangle class="rec_info">
+                            <rectangle class="rec_info"> <!-- Campo do nome -->
                                 <edit class="camp_name"/>
                                 <rectangle class="subline"/>
                             </rectangle>
-                            <rectangle class="rec_info">
+                            <rectangle class="rec_info"> <!-- Campo da origem -->
+                                <comboBox class="box_infos" field="origem"
+                                items="{
+                                    'Sem Origem', 'Académico',
+                                    'Agente de Saúde', 'Amnésico',
+                                    'Artista', 'Atleta',
+                                    'Chef', 'Criminoso',
+                                    'Cultista Arrependido', 'Desgarrado',
+                                    'Engenheiro', 'Executivo',
+                                    'Investigador', 'Lutador',
+                                    'Magnata', 'Mercenário',
+                                    'Militar', 'Operário',
+                                    'Policial', 'Religioso',
+                                    'Servidor Público', 'Teórico da Conspiração',
+                                    'T.I.', 'Trabalhador Rural',
+                                    'Trambiqueiro', 'Universitário',
+                                    'Vítima', 'Cientista Forense',
+                                    'Escritor', 'Jornalista',
+                                    'Professor', 'Revoltado',
+                                    'Dublê', 'Ginasta',
+                                    'Gaudério Abutre'
+                                }"
+                                values="{
+                                    '01', '02',
+                                    '03', '04',
+                                    '05', '06',
+                                    '07', '08',
+                                    '09', '10',
+                                    '11', '12',
+                                    '13', '14',
+                                    '15', '16',
+                                    '17', '18',
+                                    '19', '20',
+                                    '21', '22',
+                                    '23', '24',
+                                    '25', '26',
+                                    '27', '28',
+                                    '29', '30',
+                                    '31', '32',
+                                    '33', '34',
+                                    '35'
+                                }"
+                                value="01"/>
                                 <rectangle class="subline"/>
                             </rectangle>
-                            <rectangle class="rec_info">
+                            <rectangle class="rec_info"> <!-- Campo da classe -->
+                                <comboBox class="box_infos" field="classe"
+                                items="{
+                                    'Sem Classe',
+                                    'Mundano',
+                                    'Combatente',
+                                    'Especialista',
+                                    'Ocultista'
+                                }"
+                                values="{
+                                    '01', '02',
+                                    '03', '04',
+                                    '05'
+                                }"
+                                value="01"/>
                                 <rectangle class="subline"/>
                             </rectangle>
-                            <rectangle class="rec_info">
+                            <rectangle class="rec_info"> <!-- Campo da trilha -->
+                                <layout name="sem_trilha">
+                                    <label class="camp_trilha"/>
+                                </layout>
+                                <layout name="combatente_trilha">
+                                    <comboBox class="box_infos" field="trilha"
+                                    items="{
+                                        'Sem Trilha',
+                                        'Aniquilador',
+                                        'Comandante de Campo',
+                                        'Guerreiro',
+                                        'Operações Especiais',
+                                        'Tropa de Choque'
+                                    }"
+                                    values="{
+                                        '01', '02',
+                                        '03', '04',
+                                        '05', '06'
+                                    }"
+                                    value="01"/>
+                                </layout>
+                                <layout name="especialista_trilha">
+                                    <comboBox class="box_infos" field="trilha"
+                                    items="{
+                                        'Sem Trilha',
+                                        'Atirador de Elite',
+                                        'Infiltrador',
+                                        'Médico de Campo',
+                                        'Negociador',
+                                        'Técnico'
+                                    }"
+                                    values="{
+                                        '01', '02',
+                                        '03', '04',
+                                        '05', '06'
+                                    }"
+                                    value="01"/>
+                                </layout>
+                                <layout name="ocultista_trilha">
+                                    <comboBox class="box_infos" field="trilha"
+                                    items="{
+                                        'Sem Trilha',
+                                        'Conduíte',
+                                        'Flagelador',
+                                        'Graduado',
+                                        'Intuitivo',
+                                        'Lâmina Paranormal'
+                                    }"
+                                    values="{
+                                        '01', '02',
+                                        '03', '04',
+                                        '05', '06'
+                                    }"
+                                    value="01"/>
+                                </layout>
                                 <rectangle class="subline"/>
+                            </rectangle>
+                            <dataLink field="classe"> <!-- Script -->
+								<event name="onChange">
+									escolherClasse = sheet.classe;
+									
+									if(escolherClasse == '01') then
+										self.sem_trilha.visible = true;
+										self.combatente_trilha.visible = false;
+										self.especialista_trilha.visible = false;
+										self.ocultista_trilha.visible = false;
+									elseif(escolherClasse == '02') then
+										self.sem_trilha.visible = true;
+										self.combatente_trilha.visible = false;
+										self.especialista_trilha.visible = false;
+										self.ocultista_trilha.visible = false;
+									elseif(escolherClasse == '03') then
+										self.sem_trilha.visible = false;
+										self.combatente_trilha.visible = true;
+										self.especialista_trilha.visible = false;
+										self.ocultista_trilha.visible = false;
+									elseif(escolherClasse == '04') then
+										self.sem_trilha.visible = false;
+										self.combatente_trilha.visible = false;
+										self.especialista_trilha.visible = true;
+										self.ocultista_trilha.visible = false;
+									elseif(escolherClasse == '05') then
+										self.sem_trilha.visible = false;
+										self.combatente_trilha.visible = false;
+										self.especialista_trilha.visible = false;
+										self.ocultista_trilha.visible = true;
+									end;
+								</event>
+							</dataLink>
+                            <rectangle class="attributes_back"> <!-- Atributos -->
+								<!-- Simbolo -->
+								    <image class="attributes_img"/>
+								<!-- Centro Atributos -->
+									<label class="Catr"/>
+								<!-- Nomes dos Atributos -->
+									<label class="atr" margins="{top=34}" text="AGI"/>
+									<label class="atr" margins="{top=106, right=190}" text="FOR"/>
+									<label class="atr" margins="{top=106, left=190}" text="INT"/>
+									<label class="atr" margins="{top=216, right=110}" text="PRE"/>
+									<label class="atr" margins="{top=216, left=110}" text="VIG"/>
+								<!-- Campo dos Atributos -->
+									<edit class="Eatr" top="12" left="112" field="AGI" hint="AGI"/>
+									<edit class="Eatr" top="82" left="17" field="FOR" hint="FOR"/>
+									<edit class="Eatr" top="82" left="207" field="INT" hint="INT"/>
+									<edit class="Eatr" top="194" left="50" field="PRE" hint="PRE"/>
+									<edit class="Eatr" top="194" left="175" field="VIG" hint="VIG"/>
                             </rectangle>
                         </flowLayout>
                     </layout>
@@ -347,12 +589,14 @@
                     </layout>
                 <!-- Anotação -->
                     <layout name="layAnota">
-					<!-- Fundo -->
-						<rectangle>
-						<!-- Campo de texto -->
-							<rectangle/>
-							<richEdit/>
-						</rectangle>
+                        <flowLayout>
+                        <!-- Fundo -->
+                            <rectangle class="notes_back">
+                            <!-- Campo de texto -->
+                                <rectangle class="notes"/>
+                                <richEdit class="notes"/>
+                            </rectangle>
+                        </flowLayout>
                     </layout>
                 <!-- Livro -->
                     <layout name="layBook">
