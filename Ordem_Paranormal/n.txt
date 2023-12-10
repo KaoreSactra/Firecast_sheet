@@ -1,0 +1,20 @@
+<rectangle class="expertise_rec" color="#202020"> <!-- proficiência -->
+<rectangle width="137">
+<label horzTextAlign="leading" margins="{left=7}" text="Atributos"/>
+</rectangle>
+<rectangle width="54">
+<label text="AGI"/>
+</rectangle>
+<rectangle width="52">
+<edit field="AtributosB"/>
+</rectangle>
+<rectangle width="58">
+<comboBox class="box_expertise" field="AtributosC"
+items="{'0','+5','+10','+15'}"
+values="{'01', '02','03', '04'}"
+value="01"/>
+</rectangle>
+<rectangle width="52">
+<edit field="AtributosO"/>
+</rectangle>
+</rectangle>

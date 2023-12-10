@@ -251,6 +251,87 @@
 			min: 0;
 			max: 9;
         }
+        #layPericias{
+            visible: false;
+        }
+        .expertise_back{
+            align: client;
+            color: transparent;
+        }
+        .expertise_title{
+            align: top;
+			height: 40;
+            color: #070707;
+            xradius: 5;
+            yradius: 5;
+            cornerType: round;
+            corners: topLeft topRight;
+            margins: {right=-1};
+        }
+        .expertise_title rectangle{
+            align: left;
+            color: transparent;
+        }
+        .expertise_title label{
+            align: client;
+            fontSize: 12;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			fontStyle: bold;
+        }
+        .expertise_rec{
+            align: top;
+			height: 25;
+        }
+        .expertise_rec rectangle{
+            align: left;
+            color: transparent;
+        }
+        .expertise_rec label{
+            align: client;
+            fontSize: 12;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+        }
+        .expertise_rec edit{
+            align: client;
+            transparent: true;
+            fontSize: 12;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+        }
+        .box_expertise{
+            align: client;
+            transparent: true;
+			fontColor: #fff;
+			fontSize: 12;
+			horzTextAlign: center;
+			vertTextAlign: center;
+        }
+        .expertise_bottom{
+            align: bottom;
+			height: 20;
+            color: #070707;
+            xradius: 5;
+            yradius: 5;
+            cornerType: round;
+            corners: bottomLeft bottomRight;
+            margins: {right=-1};
+        }
+        .expertise_bottom rectangle{
+            align: left;
+            color: transparent;
+        }
+        .expertise_bottom label{
+            align: client;
+            fontSize: 12;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+        }
         #layAnota{
             visible: false;
         }
@@ -380,8 +461,7 @@
 					]]>
 				</script>
 
-            <!-- Layers -->
-                <rectangle class="lay">
+            <rectangle class="lay"> <!-- Layers -->
                 <!-- Perfil -->
                     <layout name="layFrente">
                         <flowLayout>
@@ -553,10 +633,8 @@
 								</event>
 							</dataLink>
                             <rectangle class="attributes_back"> <!-- Atributos -->
-								<!-- Simbolo -->
-								    <image class="attributes_img"/>
-								<!-- Centro Atributos -->
-									<label class="Catr"/>
+								<image class="attributes_img"/> <!-- Simbolo -->
+								<label class="Catr"/> <!-- Centro Atributos -->
 								<!-- Nomes dos Atributos -->
 									<label class="atr" margins="{top=34}" text="AGI"/>
 									<label class="atr" margins="{top=106, right=190}" text="FOR"/>
@@ -574,6 +652,596 @@
                     </layout>
                 <!-- Pericias -->
                     <layout name="layPericias">
+                        <rectangle class="expertise_back">
+                            <rectangle class="expertise_title"> <!-- título de proficiências -->
+                                <rectangle width="137">
+                                    <label text="Perícia"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="Atrib."/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <label text="Bonûs"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <label text="Treino"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <label text="Outros"/>
+                                </rectangle>
+                            </rectangle>
+                        <scrollBox align="client">
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Acrobacia -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Acrobacia ⭐"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="AGI"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="AcrobaciaB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="AcrobaciaC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="AcrobaciaO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Adestramento -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Adestramento ♦"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="PRE"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="AdestramentoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="AdestramentoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="AdestramentoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Artes -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Artes ♦"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="PRE"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="ArtesB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="ArtesC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="ArtesO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Atletismo-->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Atletismo ⭐"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="FOR"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="AtletismoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="AtletismoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="AtletismoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Atualidades -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Atualidades"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="AtualidadesB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="AtualidadesC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="AtualidadesO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Ciências -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Ciências ♦"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="CiênciasB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="CiênciasC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="CiênciasO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Crime -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Crime ♦ ⭐"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="AGI"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="CrimeB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="CrimeC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="CrimeO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Diplomacia -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Diplomacia"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="PRE"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="DiplomaciaB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="DiplomaciaC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="DiplomaciaO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Enganação -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Enganação"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="PRE"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="EnganaçãoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="EnganaçãoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="EnganaçãoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Fortitude -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Fortitude"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="VIG"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="FortitudeB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="FortitudeC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="FortitudeO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Furtividade -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Furtividade ⭐"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="AGI"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="FurtividadeB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="FurtividadeC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="FurtividadeO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Iniciativa -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Iniciativa"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="AGI"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="IniciativaB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="IniciativaC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="IniciativaO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Intimidação -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Intimidação"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="PRE"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="IntimidaçãoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="IntimidaçãoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="IntimidaçãoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Intuição -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Intuição"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="IntuiçãoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="IntuiçãoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="IntuiçãoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Investigação -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Investigação ⭐"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="InvestigaçãoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="InvestigaçãoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="InvestigaçãoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Luta -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Luta"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="FOR"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="LutaB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="LutaC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="LutaO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Medicina -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Medicina"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="MedicinaB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="MedicinaC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="MedicinaO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Ocultismo -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Ocultismo ♦"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="OcultismoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="OcultismoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="OcultismoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Percepção -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Percepção"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="PRE"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="PercepçãoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="PercepçãoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="PercepçãoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Pilotagem -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Pilotagem ♦"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="AGI"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="PilotagemB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="PilotagemC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="PilotagemO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Pontaria -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Pontaria"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="AGI"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="PontariaB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="PontariaC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="PontariaO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Profissão -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Profissão ♦"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="ProfissãoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="ProfissãoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="ProfissãoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Reflexos -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Reflexos"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="AGI"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="ReflexosB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="ReflexosC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="ReflexosO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Religião -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Religião ♦"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="PRE"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="ReligiãoB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="ReligiãoC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="ReligiãoO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Sobrevivência -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Sobrevivência"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="SobrevivênciaB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="SobrevivênciaC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="SobrevivênciaO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Tática -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Tática ♦"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="TáticaB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="TáticaC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="TáticaO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#202020"> <!-- Tecnologia -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Tecnologia ♦"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="INT"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="TecnologiaB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="TecnologiaC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="TecnologiaO"/>
+                                </rectangle>
+                            </rectangle>
+                            <rectangle class="expertise_rec" color="#181818"> <!-- Vontade -->
+                                <rectangle width="137">
+                                    <label horzTextAlign="leading" margins="{left=7}" text="Vontade"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="PRE"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="VontadeB"/>
+                                </rectangle>
+                                <rectangle width="58">
+                                    <comboBox class="box_expertise" field="VontadeC"
+                                        items="{'0','+5','+10','+15'}"
+                                        values="{'01', '02','03', '04'}"
+                                        value="01"/>
+                                </rectangle>
+                                <rectangle width="52">
+                                    <edit field="VontadeO"/>
+                                </rectangle>
+                            </rectangle>
+                        </scrollBox>
+                        <!-- expicação -->
+                            <rectangle class="expertise_bottom">
+                                <rectangle width="185">
+                                    <label text="♦ - Penalidade de carga."/>
+                                </rectangle>
+                                <rectangle width="185">
+                                    <label text="⭐​ - Somente treinado."/>
+                                </rectangle>
+                            </rectangle>
+                        </rectangle>
                     </layout>
                 <!-- Ataques -->
                     <layout name="layAtaques">
