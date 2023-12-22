@@ -600,6 +600,7 @@
             min: 0;
             mouseGlow: true;
             height: 60;
+            margins: {right=20, left=20};
         }
         #layRituais{
             visible: false;

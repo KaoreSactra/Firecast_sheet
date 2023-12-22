@@ -7322,6 +7322,7 @@ local function constructNew_frmficha()
     obj.progressBar1:setMin(0);
     obj.progressBar1:setMouseGlow(true);
     obj.progressBar1:setHeight(60);
+    obj.progressBar1:setMargins({right=20, left=20});
 
     obj.rectangle472 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle472:setParent(obj.rectangle466);
@@ -7414,6 +7415,7 @@ local function constructNew_frmficha()
     obj.progressBar2:setMin(0);
     obj.progressBar2:setMouseGlow(true);
     obj.progressBar2:setHeight(60);
+    obj.progressBar2:setMargins({right=20, left=20});
 
     obj.rectangle477 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle477:setParent(obj.rectangle466);
@@ -7506,6 +7508,7 @@ local function constructNew_frmficha()
     obj.progressBar3:setMin(0);
     obj.progressBar3:setMouseGlow(true);
     obj.progressBar3:setHeight(60);
+    obj.progressBar3:setMargins({right=20, left=20});
 
     obj.flowLayout5 = GUI.fromHandle(_obj_newObject("flowLayout"));
     obj.flowLayout5:setParent(obj.rectangle464);
