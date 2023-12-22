@@ -39,7 +39,7 @@
 		}
         .dice_camp{
             align: bottom;
-            margins: {bottom=15};
+            margins: {bottom=20};
             horzAlign: center;
             autoHeight: true;
             orientation: horizontal;
@@ -75,7 +75,7 @@
             align: client;
         }
         #layFrente{
-            visible: true;
+            visible: false;
         }
         #layFrente flowLayout{
             align: top;
@@ -173,6 +173,7 @@
             color: #ffe000;
             compilerOrder: 100;
             margins: {left=15, right=15};
+            opacity: 0.3;
         }
         .camp_name{
             align: client;
@@ -251,12 +252,12 @@
 			min: 0;
 			max: 9;
         }
-        #layPericias{
-            visible: false;
-        }
-        .expertise_back{
+        .lay_back{
             align: client;
             color: transparent;
+        }
+        #layPericias{
+            visible: false;
         }
         .expertise_title{
             align: top;
@@ -332,6 +333,277 @@
 			horzTextAlign: center;
 			vertTextAlign: center;
         }
+        .profi_name label{
+            align: left;
+            width: 60;
+        }
+        .profi_name rectangle{
+            align: bottom;
+            height: 1;
+            margins: {left=70, right=5, bottom=6};
+            color: #fff;
+            opacity: 0.3;
+        }
+        edit rectangle{
+            align: bottom;
+            height: 1;
+            margins: {left=15, right=15, bottom=3};
+            color: #fff;
+            opacity: 0.3;
+        }
+        #layCombate{
+            visible: true;
+        }
+        .attack_title{
+            align: top;
+			height: 40;
+            color: #070707;
+            xradius: 5;
+            yradius: 5;
+            cornerType: round;
+        }
+        .attack_title rectangle{
+            align: left;
+            color: transparent;
+        }
+        .attack_title label{
+            align: client;
+            fontSize: 12;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+			fontStyle: bold;
+        }
+        .attack_edit{
+            align: client;
+            transparent: true;
+            fontSize: 12;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+        }
+        .attack_subline{
+            align: bottom;
+            height: 1;
+            color: #fff;
+            compilerOrder: 100;
+            margins: {left=5, right=5, bottom=3};
+            opacity: 0.3;
+        }
+        .def_back{
+            align: top;
+            color: #222222;
+            height: 185;
+            margins: {top=5};
+            xradius: 5;
+            yradius: 5;
+            cornerType: round;
+            corners: topLeft topRight;
+        }
+        .def_tittle{
+            align: top;
+            color: transparent;
+            height: 45;
+        }
+        .def_tittle label{
+            align: client;
+            fontSize: 30;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+            fontFamily: georgia;
+            fontStyle: bold;
+        }
+        .def_calc{
+            margins: {left=60, right=60};
+        }
+        .def_total{
+            margins: {left=150, right=150};
+        }
+        .def_calc, .def_total{
+            align: top;
+            color: transparent;
+            height: 65;
+        }
+        .def_box{
+            align: left;
+            color: transparent;
+            width: 40;
+            margins: {top=10};
+        }
+        .base_box{
+            align: top;
+            color: transparent;
+            height: 40;
+            strokeColor: #fff;
+            strokeSize: 2;
+            xradius: 10;
+            yradius: 10;
+            cornerType: bevel;
+        }
+        .base_box_num{
+            align: top;
+            color: transparent;
+            height: 40;
+            strokeColor: #fff;
+            strokeSize: 2;
+            xradius: 20;
+            yradius: 20;
+            cornerType: round;
+        }
+        .def_num{
+            align: client;
+            fontSize: 20;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+        }
+        .def_num_edit{
+            align: client;
+            fontSize: 20;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+            transparent: true;
+			type: number;
+			min: 0;
+			max: 99;
+        }
+        .def_name{
+            align: top;
+            fontSize: 12;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+        }
+        .sum{
+            align: left;
+            color: transparent;
+            width: 30;
+            margins: {top=10, bottom=20};
+        }
+        .sum label{
+            align: client;
+            fontSize: 20;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+            text: +;
+        }
+        .def_box_total{
+            align: left;
+            color: transparent;
+            width: 70;
+            margins: {top=10};
+        }
+        .infosVitais{
+            align: bottom;
+            height: 25;
+            color: #070707;
+            xradius: 5;
+            yradius: 5;
+            cornerType: round;
+            corners: bottomLeft bottomRight;
+        }
+        .infosVitais button{
+            align: client;
+            opacity: 0;
+        }
+        .infosVitais label{
+            align: client;
+            fontSize: 12;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+            text: PV, PE e Sanidade;
+        }
+        #infosVitais{
+            align: client;
+            backOpacity: 0;
+            drawContainer: false;
+        }
+        .return_rec{
+            align: top;
+            height: 30;
+            margins: {top=20, right=20, left=350};
+			color: #ffe000;
+			xradius: 5;
+			yradius: 5;
+			cornerType: round;
+        }
+        .return_label{
+            align: client;
+            fontSize: 20;
+			fontColor: #000;
+			horzTextAlign: center;
+			vertTextAlign: center;
+            fontStyle: bold;
+            text: &lt;;
+            margins: {bottom=5};
+        }
+        .return_button{
+            align: client;
+            opacity: 0;
+        }
+        .camp_infosVitais{
+            align: top;
+            height: 660;
+            margins: {top=20, right=20, left=20};
+            color: transparent;
+        }
+        .camp_vitais{
+            align: top;
+            height: 200;
+            color: transparent;
+        }
+        .tittle_vital_rec{
+            align: top;
+            height: 50;
+            color: #222;
+            margins: {top=10, bottom=10, left=20, right=20};
+			xradius: 5;
+			yradius: 5;
+			cornerType: round;
+        }
+        .tittle_vital{
+            align: client;
+            fontSize: 24;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+            fontFamily: georgia;
+        }
+        .field_vital{
+            align: top;
+            height: 70;
+            color: transparent;
+        }
+        .field_vital rectangle{
+            align: left;
+            width: 150;
+            color: #222;
+            margins: {top=5, bottom=15, left=20};
+			xradius: 5;
+			yradius: 5;
+			cornerType: round;
+        }
+        .field_vital rectangle edit{
+            align: client;
+            fontSize: 20;
+			fontColor: #fff;
+			horzTextAlign: center;
+			vertTextAlign: center;
+            transparent: true;
+        }
+        .bar_infos{
+            align: top;
+            min: 0;
+            mouseGlow: true;
+            height: 60;
+        }
+        #layRituais{
+            visible: false;
+        }
         #layAnota{
             visible: false;
         }
@@ -363,6 +635,32 @@
         }
     </style>
 
+<!-- Templates -->
+    <template name="attack">
+        <rectangle align="top" height="25" color="transparent">
+            <rectangle width="162" align="left" color="transparent">
+                <edit class="attack_edit" field="$(attk)"/>
+                <rectangle class="attack_subline"/>
+            </rectangle>
+            <rectangle width="40" align="left" color="transparent">
+                <edit class="attack_edit" field="$(test)"/>
+                <rectangle class="attack_subline"/>
+            </rectangle>
+            <rectangle width="64" align="left" color="transparent">
+                <edit class="attack_edit" field="$(dano)"/>
+                <rectangle class="attack_subline"/>
+            </rectangle>
+            <rectangle width="54" align="left" color="transparent">
+                <edit class="attack_edit" field="$(alcc)"/>
+                <rectangle class="attack_subline"/>
+            </rectangle>
+            <rectangle width="50" align="left" color="transparent">
+                <edit class="attack_edit" field="$(crit)"/>
+                <rectangle class="attack_subline"/>
+            </rectangle>
+        </rectangle>
+    </template>
+
 <!-- Corpo -->
     <rectangle class="background">
         <flowLayout class="pattern">
@@ -372,7 +670,7 @@
                 <flowLayout class="tab_button">
                     <flowPart><button text="😀" hint="Perfil" onClick="TrocarAba('F');"/></flowPart>
 					<flowPart margins="{left=10}"><button text="🔨" hint="Perícias" onClick="TrocarAba('P');"/></flowPart>
-					<flowPart margins="{left=10}"><button text="⚔️" hint="Ataques" onClick="TrocarAba('A');"/></flowPart>
+					<flowPart margins="{left=10}"><button text="⚔️" hint="Combate" onClick="TrocarAba('A');"/></flowPart>
 					<flowPart margins="{left=10}"><button text="☄" hint="Rituais" onClick="TrocarAba('R');"/></flowPart>
 					<flowPart margins="{left=10}"><button text="📚" hint="Habilidades" onClick="TrocarAba('H');"/></flowPart>
 					<flowPart margins="{left=10}"><button text="🎒" hint="Inventário" onClick="TrocarAba('I');"/></flowPart>
@@ -387,7 +685,7 @@
 							if(a == 'F') then
 								self.layFrente.visible = true;
 								self.layPericias.visible = false;
-								self.layAtaques.visible = false;
+								self.layCombate.visible = false;
 								self.layRituais.visible = false;
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
@@ -396,7 +694,7 @@
 							elseif(a == 'P') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = true;
-								self.layAtaques.visible = false;
+								self.layCombate.visible = false;
 								self.layRituais.visible = false;
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
@@ -405,7 +703,7 @@
 							elseif(a == 'A') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
-								self.layAtaques.visible = true;
+								self.layCombate.visible = true;
 								self.layRituais.visible = false;
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
@@ -414,7 +712,7 @@
 							elseif(a == 'R') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
-								self.layAtaques.visible = false;
+								self.layCombate.visible = false;
 								self.layRituais.visible = true;
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
@@ -423,7 +721,7 @@
 							elseif(a == 'H') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
-								self.layAtaques.visible = false;
+								self.layCombate.visible = false;
 								self.layRituais.visible = false;
 								self.layHabil.visible = true;
 								self.layInvent.visible = false;
@@ -432,7 +730,7 @@
 							elseif(a == 'I') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
-								self.layAtaques.visible = false;
+								self.layCombate.visible = false;
 								self.layRituais.visible = false;
 								self.layHabil.visible = false;
 								self.layInvent.visible = true;
@@ -441,7 +739,7 @@
 							elseif(a == 'N') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
-								self.layAtaques.visible = false;
+								self.layCombate.visible = false;
 								self.layRituais.visible = false;
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
@@ -450,7 +748,7 @@
 							elseif(a == 'B') then
 								self.layFrente.visible = false;
 								self.layPericias.visible = false;
-								self.layAtaques.visible = false;
+								self.layCombate.visible = false;
 								self.layRituais.visible = false;
 								self.layHabil.visible = false;
 								self.layInvent.visible = false;
@@ -652,7 +950,7 @@
                     </layout>
                 <!-- Pericias -->
                     <layout name="layPericias">
-                        <rectangle class="expertise_back">
+                        <rectangle class="lay_back">
                             <rectangle class="expertise_title"> <!-- título de proficiências -->
                                 <rectangle width="137">
                                     <label text="Perícia"/>
@@ -679,7 +977,9 @@
                                     <label text="AGI"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="AcrobaciaB"/>
+                                    <edit field="AcrobaciaB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="AcrobaciaC"
@@ -688,7 +988,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="AcrobaciaO"/>
+                                    <edit field="AcrobaciaO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Adestramento -->
@@ -699,7 +1001,9 @@
                                     <label text="PRE"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="AdestramentoB"/>
+                                    <edit field="AdestramentoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="AdestramentoC"
@@ -708,7 +1012,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="AdestramentoO"/>
+                                    <edit field="AdestramentoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Artes -->
@@ -719,7 +1025,9 @@
                                     <label text="PRE"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="ArtesB"/>
+                                    <edit field="ArtesB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="ArtesC"
@@ -728,7 +1036,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="ArtesO"/>
+                                    <edit field="ArtesO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Atletismo-->
@@ -739,7 +1049,9 @@
                                     <label text="FOR"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="AtletismoB"/>
+                                    <edit field="AtletismoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="AtletismoC"
@@ -748,7 +1060,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="AtletismoO"/>
+                                    <edit field="AtletismoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Atualidades -->
@@ -759,7 +1073,9 @@
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="AtualidadesB"/>
+                                    <edit field="AtualidadesB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="AtualidadesC"
@@ -768,7 +1084,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="AtualidadesO"/>
+                                    <edit field="AtualidadesO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Ciências -->
@@ -779,7 +1097,9 @@
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="CiênciasB"/>
+                                    <edit field="CiênciasB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="CiênciasC"
@@ -788,7 +1108,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="CiênciasO"/>
+                                    <edit field="CiênciasO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Crime -->
@@ -799,7 +1121,9 @@
                                     <label text="AGI"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="CrimeB"/>
+                                    <edit field="CrimeB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="CrimeC"
@@ -808,7 +1132,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="CrimeO"/>
+                                    <edit field="CrimeO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Diplomacia -->
@@ -819,7 +1145,9 @@
                                     <label text="PRE"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="DiplomaciaB"/>
+                                    <edit field="DiplomaciaB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="DiplomaciaC"
@@ -828,7 +1156,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="DiplomaciaO"/>
+                                    <edit field="DiplomaciaO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Enganação -->
@@ -839,7 +1169,9 @@
                                     <label text="PRE"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="EnganaçãoB"/>
+                                    <edit field="EnganaçãoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="EnganaçãoC"
@@ -848,7 +1180,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="EnganaçãoO"/>
+                                    <edit field="EnganaçãoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Fortitude -->
@@ -859,7 +1193,9 @@
                                     <label text="VIG"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="FortitudeB"/>
+                                    <edit field="FortitudeB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="FortitudeC"
@@ -868,7 +1204,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="FortitudeO"/>
+                                    <edit field="FortitudeO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Furtividade -->
@@ -879,7 +1217,9 @@
                                     <label text="AGI"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="FurtividadeB"/>
+                                    <edit field="FurtividadeB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="FurtividadeC"
@@ -888,7 +1228,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="FurtividadeO"/>
+                                    <edit field="FurtividadeO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Iniciativa -->
@@ -899,7 +1241,9 @@
                                     <label text="AGI"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="IniciativaB"/>
+                                    <edit field="IniciativaB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="IniciativaC"
@@ -908,7 +1252,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="IniciativaO"/>
+                                    <edit field="IniciativaO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Intimidação -->
@@ -919,7 +1265,9 @@
                                     <label text="PRE"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="IntimidaçãoB"/>
+                                    <edit field="IntimidaçãoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="IntimidaçãoC"
@@ -928,7 +1276,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="IntimidaçãoO"/>
+                                    <edit field="IntimidaçãoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Intuição -->
@@ -939,7 +1289,9 @@
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="IntuiçãoB"/>
+                                    <edit field="IntuiçãoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="IntuiçãoC"
@@ -948,7 +1300,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="IntuiçãoO"/>
+                                    <edit field="IntuiçãoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Investigação -->
@@ -959,7 +1313,9 @@
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="InvestigaçãoB"/>
+                                    <edit field="InvestigaçãoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="InvestigaçãoC"
@@ -968,7 +1324,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="InvestigaçãoO"/>
+                                    <edit field="InvestigaçãoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Luta -->
@@ -979,7 +1337,9 @@
                                     <label text="FOR"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="LutaB"/>
+                                    <edit field="LutaB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="LutaC"
@@ -988,7 +1348,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="LutaO"/>
+                                    <edit field="LutaO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Medicina -->
@@ -999,7 +1361,9 @@
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="MedicinaB"/>
+                                    <edit field="MedicinaB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="MedicinaC"
@@ -1008,7 +1372,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="MedicinaO"/>
+                                    <edit field="MedicinaO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Ocultismo -->
@@ -1019,7 +1385,9 @@
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="OcultismoB"/>
+                                    <edit field="OcultismoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="OcultismoC"
@@ -1028,7 +1396,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="OcultismoO"/>
+                                    <edit field="OcultismoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Percepção -->
@@ -1039,7 +1409,9 @@
                                     <label text="PRE"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="PercepçãoB"/>
+                                    <edit field="PercepçãoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="PercepçãoC"
@@ -1048,7 +1420,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="PercepçãoO"/>
+                                    <edit field="PercepçãoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Pilotagem -->
@@ -1059,7 +1433,9 @@
                                     <label text="AGI"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="PilotagemB"/>
+                                    <edit field="PilotagemB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="PilotagemC"
@@ -1068,7 +1444,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="PilotagemO"/>
+                                    <edit field="PilotagemO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Pontaria -->
@@ -1079,7 +1457,9 @@
                                     <label text="AGI"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="PontariaB"/>
+                                    <edit field="PontariaB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="PontariaC"
@@ -1088,18 +1468,24 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="PontariaO"/>
+                                    <edit field="PontariaO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Profissão -->
-                                <rectangle width="137">
+                                <rectangle class="profi_name" width="137">
                                     <label horzTextAlign="leading" margins="{left=7}" text="Profissão ♦"/>
+                                    <edit field="Profi"/>
+                                    <rectangle/>
                                 </rectangle>
                                 <rectangle width="54">
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="ProfissãoB"/>
+                                    <edit field="ProfissãoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="ProfissãoC"
@@ -1108,7 +1494,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="ProfissãoO"/>
+                                    <edit field="ProfissãoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Reflexos -->
@@ -1119,7 +1507,9 @@
                                     <label text="AGI"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="ReflexosB"/>
+                                    <edit field="ReflexosB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="ReflexosC"
@@ -1128,7 +1518,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="ReflexosO"/>
+                                    <edit field="ReflexosO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Religião -->
@@ -1139,7 +1531,9 @@
                                     <label text="PRE"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="ReligiãoB"/>
+                                    <edit field="ReligiãoB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="ReligiãoC"
@@ -1148,7 +1542,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="ReligiãoO"/>
+                                    <edit field="ReligiãoO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Sobrevivência -->
@@ -1159,7 +1555,9 @@
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="SobrevivênciaB"/>
+                                    <edit field="SobrevivênciaB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="SobrevivênciaC"
@@ -1168,7 +1566,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="SobrevivênciaO"/>
+                                    <edit field="SobrevivênciaO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Tática -->
@@ -1179,7 +1579,9 @@
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="TáticaB"/>
+                                    <edit field="TáticaB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="TáticaC"
@@ -1188,7 +1590,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="TáticaO"/>
+                                    <edit field="TáticaO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#202020"> <!-- Tecnologia -->
@@ -1199,7 +1603,9 @@
                                     <label text="INT"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="TecnologiaB"/>
+                                    <edit field="TecnologiaB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="TecnologiaC"
@@ -1208,7 +1614,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="TecnologiaO"/>
+                                    <edit field="TecnologiaO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                             <rectangle class="expertise_rec" color="#181818"> <!-- Vontade -->
@@ -1219,7 +1627,9 @@
                                     <label text="PRE"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="VontadeB"/>
+                                    <edit field="VontadeB">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                                 <rectangle width="58">
                                     <comboBox class="box_expertise" field="VontadeC"
@@ -1228,7 +1638,9 @@
                                         value="01"/>
                                 </rectangle>
                                 <rectangle width="52">
-                                    <edit field="VontadeO"/>
+                                    <edit field="VontadeO">
+                                    <rectangle/>
+                                    </edit>
                                 </rectangle>
                             </rectangle>
                         </scrollBox>
@@ -1243,8 +1655,247 @@
                             </rectangle>
                         </rectangle>
                     </layout>
-                <!-- Ataques -->
-                    <layout name="layAtaques">
+                <!-- Combate -->
+                    <layout name="layCombate">
+                        <rectangle class="lay_back">
+                            <rectangle class="attack_title"> <!-- título dos Combate -->
+                                <rectangle width="162">
+                                    <label text="Ataque"/>
+                                </rectangle>
+                                <rectangle width="40">
+                                    <label text="Teste"/>
+                                </rectangle>
+                                <rectangle width="64">
+                                    <label text="Dano"/>
+                                </rectangle>
+                                <rectangle width="54">
+                                    <label text="Alcance"/>
+                                </rectangle>
+                                <rectangle width="50">
+                                    <label text="Crítico"/>
+                                </rectangle>
+                            </rectangle>
+                        <!-- Combate -->
+                            <attack attk="at01" test="ts01" dano="dn01" alcc="al01" crit="ct01"/>
+                            <attack attk="at02" test="ts02" dano="dn02" alcc="al02" crit="ct02"/>
+                            <attack attk="at03" test="ts03" dano="dn03" alcc="al03" crit="ct03"/>
+                            <attack attk="at04" test="ts04" dano="dn04" alcc="al04" crit="ct04"/>
+                            <attack attk="at05" test="ts05" dano="dn05" alcc="al05" crit="ct05"/>
+                            <attack attk="at06" test="ts06" dano="dn06" alcc="al06" crit="ct06"/>
+                            <attack attk="at07" test="ts07" dano="dn07" alcc="al07" crit="ct07"/>
+                            <attack attk="at08" test="ts08" dano="dn08" alcc="al08" crit="ct08"/>
+                            <attack attk="at09" test="ts09" dano="dn09" alcc="al09" crit="ct09"/>
+                            <attack attk="at10" test="ts10" dano="dn10" alcc="al10" crit="ct10"/>
+                            <attack attk="at11" test="ts11" dano="dn11" alcc="al11" crit="ct11"/>
+                            <attack attk="at12" test="ts12" dano="dn12" alcc="al12" crit="ct12"/>
+                            <attack attk="at13" test="ts13" dano="dn13" alcc="al13" crit="ct13"/>
+                            <attack attk="at14" test="ts14" dano="dn14" alcc="al14" crit="ct14"/>
+                            <attack attk="at15" test="ts15" dano="dn15" alcc="al15" crit="ct15"/>
+                            <attack attk="at16" test="ts16" dano="dn16" alcc="al16" crit="ct16"/>
+                            <attack attk="at17" test="ts17" dano="dn17" alcc="al17" crit="ct17"/>
+                        <!-- Defesa -->
+                            <rectangle class="def_back">
+                                <rectangle class="def_tittle">
+                                    <label text="Defesa"/>
+                                </rectangle>
+                                <rectangle class="def_calc">
+                                    <rectangle class="def_box">
+                                        <rectangle class="base_box">
+                                            <label class="def_num" text="10"/>
+                                        </rectangle>
+                                        <label class="def_name" text="Base"/>
+                                    </rectangle>
+                                    <rectangle class="sum"><label/></rectangle>
+                                    <rectangle class="def_box">
+                                        <rectangle class="base_box_num">
+                                            <label class="def_num" field="AGI"/>
+                                        </rectangle>
+                                        <label class="def_name" text="AGI"/>
+                                    </rectangle>
+                                    <rectangle class="sum"><label/></rectangle>
+                                    <rectangle class="def_box">
+                                        <rectangle class="base_box_num">
+                                            <edit class="def_num_edit" field="equipDEF"/>
+                                        </rectangle>
+                                        <label class="def_name" text="Equip."/>
+                                    </rectangle>
+                                    <rectangle class="sum"><label/></rectangle>
+                                    <rectangle class="def_box">
+                                        <rectangle class="base_box_num">
+                                            <edit class="def_num_edit" field="outrosDEF"/>
+                                        </rectangle>
+                                        <label class="def_name" text="Outros"/>
+                                    </rectangle>
+                                </rectangle>
+                                <rectangle class="def_total">
+                                    <rectangle class="def_box_total">
+                                        <rectangle class="base_box_num" xradius="10" yradius="10">
+                                            <label class="def_num" field="totalDEF"/>
+                                        </rectangle>
+                                        <label class="def_name" text="Defesa Total"/>
+                                    </rectangle>
+                                </rectangle>
+                                <dataLink fields="{'AGI', 'equipDEF', 'outrosDEF'}">
+									<event name="onChange">
+										sheet.totalDEF = (tonumber(sheet.AGI) or 0) +
+														(tonumber(sheet.equipDEF) or 0) +
+														(tonumber(sheet.outrosDEF) or 0) + 10;               
+									</event>
+								</dataLink>
+                            </rectangle>
+                        <!-- infos button -->
+                            <rectangle class="infosVitais">
+                                <button onClick="self.infosVitais:show('top', self.infosVitaisB);" hint="Informações Vitais"/>
+                                <label/>
+                            </rectangle>
+                        </rectangle>
+                    <!-- Infos popup -->
+                        <popup name="infosVitais">
+                            <flowLayout class="pattern">
+                                <rectangle class="sheet">
+                                    <!-- Return button -->
+                                        <rectangle class="return_rec">
+                                            <label class="return_label"/>
+                                            <button class="return_button" onClick="self.infosVitais:close('top', self.infosVitaisB);" hint="Voltar"/>
+                                        </rectangle>
+                                    <!-- infos Vitais -->
+                                        <rectangle class="camp_infosVitais">
+                                            <rectangle class="camp_vitais">
+                                                <rectangle class="tittle_vital_rec"><label class="tittle_vital" text="Pontos de vida"/></rectangle>
+                                                <rectangle class="field_vital">
+                                                    <rectangle>
+                                                        <edit field="pvAtual"/>
+                                                    </rectangle>
+                                                    <rectangle>
+                                                        <edit field="pvMax"/>
+                                                    </rectangle>
+                                                </rectangle>
+                                                <progressBar class="bar_infos" color="red" field="pvAtual" fieldMax="pvMax"/>
+                                            </rectangle>
+                                            <rectangle class="camp_vitais" margins="{top=30}">
+                                                <rectangle class="tittle_vital_rec"><label class="tittle_vital" text="Sanidade"/></rectangle>
+                                                <rectangle class="field_vital">
+                                                    <rectangle>
+                                                        <edit field="sanidAtual"/>
+                                                    </rectangle>
+                                                    <rectangle>
+                                                        <edit field="sanidMax"/>
+                                                    </rectangle>
+                                                </rectangle>
+                                                <progressBar class="bar_infos" color="#2387EB" field="sanidAtual" fieldMax="sanidMax"/>
+                                            </rectangle>
+                                            <rectangle class="camp_vitais" margins="{top=30}">
+                                                <rectangle class="tittle_vital_rec"><label class="tittle_vital" text="Pontos de esforço"/></rectangle>
+                                                <rectangle class="field_vital">
+                                                    <rectangle>
+                                                        <edit field="peAtual"/>
+                                                    </rectangle>
+                                                    <rectangle>
+                                                        <edit field="peMax"/>
+                                                    </rectangle>
+                                                </rectangle>
+                                                <progressBar class="bar_infos" color="#8D65EB" field="peAtual" fieldMax="peMax"/>
+                                            </rectangle>
+                                        </rectangle>
+                                    <!-- Campo de dados -->
+                                        <flowLayout class="dice_camp">
+                                            <rectangle>
+                                                <label text="A"/>
+                                                <button hint="Agilidade">
+                                                    <event name="onClick">
+                                                        
+                                                        local rolagem = Firecast.interpretarRolagem(sheet.AGI .. ("d20")); 
+                                                        
+                                                        if sheet.AGI == 0 then
+                                                        
+                                                            rolagem = Firecast.interpretarRolagem("2d20");
+                                                            
+                                                        end;
+                                                        
+                                                        local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                                        mesaDoPersonagem.chat:rolarDados(rolagem, "Agilidade");
+                                                    </event>
+                                                </button>
+                                            </rectangle>
+                                            <rectangle margins="{left=15}">
+                                                <label text="F"/>
+                                                <button hint="Força">
+                                                    <event name="onClick">
+                                                    
+                                                        local rolagem = Firecast.interpretarRolagem(sheet.FOR .. ("d20")); 
+                                                        
+                                                        if sheet.FOR == 0 then
+                                                        
+                                                            rolagem = Firecast.interpretarRolagem("2d20");
+                                                            
+                                                        end;
+                                                        
+                                                        local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                                        mesaDoPersonagem.chat:rolarDados(rolagem, "Força");
+                                                    </event>
+                                                </button>
+                                            </rectangle>
+
+                                            <rectangle margins="{left=15}">
+                                                <label text="I"/>
+                                                <button hint="Intelecto">
+                                                    <event name="onClick">
+                                                    
+                                                        local rolagem = Firecast.interpretarRolagem(sheet.INT .. ("d20")); 
+                                                        
+                                                        if sheet.INT == 0 then
+                                                        
+                                                            rolagem = Firecast.interpretarRolagem("2d20");
+                                                            
+                                                        end;
+                                                        
+                                                        local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                                        mesaDoPersonagem.chat:rolarDados(rolagem, "Intelecto");
+                                                    </event>
+                                                </button>
+                                            </rectangle>
+
+                                            <rectangle margins="{left=15}">
+                                                <label text="P"/>
+                                                <button hint="Presença">
+                                                    <event name="onClick">
+                                                    
+                                                        local rolagem = Firecast.interpretarRolagem(sheet.PRE .. ("d20")); 
+                                                        
+                                                        if sheet.PRE == 0 then
+                                                        
+                                                            rolagem = Firecast.interpretarRolagem("2d20");
+                                                            
+                                                        end;
+                                                        
+                                                        local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                                        mesaDoPersonagem.chat:rolarDados(rolagem, "Presença");
+                                                    </event>
+                                                </button>
+                                            </rectangle>
+
+                                            <rectangle margins="{left=15}">
+                                                <label text="V"/>
+                                                <button hint="Vigor">
+                                                    <event name="onClick">
+                                                    
+                                                        local rolagem = Firecast.interpretarRolagem(sheet.VIG .. ("d20")); 
+                                                        
+                                                        if sheet.VIG == 0 then
+                                                        
+                                                            rolagem = Firecast.interpretarRolagem("2d20");
+                                                            
+                                                        end;
+                                                        
+                                                        local mesaDoPersonagem = Firecast.getMesaDe(sheet);
+                                                        mesaDoPersonagem.chat:rolarDados(rolagem, "Vigor");
+                                                    </event>
+                                                </button>
+                                            </rectangle>
+                                        </flowLayout>
+                                </rectangle>
+                            </flowLayout>
+                        </popup>
                     </layout>
                 <!-- Rituais -->
                     <layout name="layRituais">
